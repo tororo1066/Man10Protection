@@ -23,15 +23,17 @@ repositories {
             password = System.getenv("GITHUB_TOKEN")
         }
     }
+
+    maven(url = "https://maven.enginehub.org/repo/")
 }
 
 dependencies {
     compileOnly(kotlin("stdlib"))
     compileOnly("io.papermc.paper:paper-api:$pluginVersion-R0.1-SNAPSHOT")
-    compileOnly("tororo1066:commandapi:$apiVersion")
-    compileOnly("tororo1066:base:$apiVersion")
     implementation("tororo1066:tororopluginapi:$apiVersion")
     compileOnly("com.mojang:brigadier:1.0.18")
+
+    compileOnly("com.sk89q.worldguard:worldguard-bukkit:7.0.14")
 }
 
 tasks.withType<ShadowJar> {
